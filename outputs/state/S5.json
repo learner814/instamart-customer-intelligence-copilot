@@ -34,7 +34,10 @@
     }
   ],
   "tool_steps": 2,
+  "llm_calls": 3,
+  "tokens_used": 308,
   "completed": true,
   "final_text": "DENIED: only completed orders can be refunded.",
-  "outcome": "DENIED"
+  "outcome": "DENIED",
+  "fallback_reason": null
 }

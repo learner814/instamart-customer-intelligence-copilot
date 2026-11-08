@@ -27,7 +27,7 @@
     {
       "role": "tool",
       "name": "issue_refund",
-      "content": "{\"status\": \"issued\", \"refund_inr\": 135.0, \"refund_amount\": 135.0, \"message\": \"Refund recorded successfully.\"}"
+      "content": "{\"status\": \"already_issued\", \"refund_inr\": 135.0, \"refund_amount\": 135.0, \"message\": \"Refund was already recorded.\"}"
     }
   ],
   "tool_results": [
@@ -48,14 +48,17 @@
       "reason": "Eligible for automatic refund."
     },
     {
-      "status": "issued",
+      "status": "already_issued",
       "refund_inr": 135.0,
       "refund_amount": 135.0,
-      "message": "Refund recorded successfully."
+      "message": "Refund was already recorded."
     }
   ],
   "tool_steps": 4,
+  "llm_calls": 5,
+  "tokens_used": 800,
   "completed": true,
   "final_text": "REFUND: INR 135.0 issued.",
-  "outcome": "REFUND"
+  "outcome": "REFUND",
+  "fallback_reason": null
 }

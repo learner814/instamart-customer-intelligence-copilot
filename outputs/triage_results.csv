@@ -1,165 +1,165 @@
-ticket_id,customer_id,order_id,safe_message,predicted_category,reason,status,retries,prompt_tokens,completion_tokens,estimated_cost_inr,true_category
-T0024,C0486,ORD-105035,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0073,C0080,ORD-100816,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0095,C1087,ORD-111156,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0159,C1172,,,technical,Empty message; manual review recommended,fallback_empty_message,0,0,0,0.0,none
-T0080,C0910,ORD-109516,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0124,C0139,ORD-101417,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0061,C0812,ORD-108532,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0118,C0355,ORD-103823,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0037,C1156,ORD-111925,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0002,C0881,ORD-109184,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,1,73,7,0.0094,delivery
-T0163,C0322,,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,delivery,keyword match,llm_success,0,788,7,0.0809,delivery
-T0031,C0958,ORD-109980,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0047,C0756,ORD-107911,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0063,C0892,ORD-109267,"I cannot login, the OTP never arrives on [PHONE].",technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,67,11,0.01,technical
-T0121,C0852,ORD-108861,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0139,C0829,ORD-108665,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0115,C1025,ORD-110592,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0123,C0674,ORD-107015,"I cannot login, the OTP never arrives on [PHONE].",technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,1,67,7,0.0088,technical
-T0116,C0294,ORD-103152,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0136,C0891,ORD-109266,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,keyword match,llm_success,0,73,7,0.0094,fraud
-T0008,C1177,ORD-112095,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0102,C0985,ORD-110217,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0072,C0218,ORD-102285,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0101,C1151,ORD-111861,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0059,C0764,ORD-108001,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0049,C0078,ORD-100789,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,1,76,7,0.0097,billing
-T0153,C0150,ORD-101580,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,72,11,0.0105,billing
-T0050,C0117,ORD-101184,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0147,C0125,ORD-101278,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0074,C1119,ORD-111436,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0156,C0328,ORD-103493,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0145,C0751,ORD-107833,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0053,C0447,ORD-104751,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0134,C0608,ORD-106377,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,1,77,7,0.0098,delivery
-T0039,C0298,ORD-103207,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,82,7,0.0103,technical
-T0016,C0962,ORD-110014,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0055,C1063,ORD-110877,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0130,C0692,ORD-107249,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0099,C1000,ORD-110362,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0062,C0403,ORD-104281,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,73,11,0.0106,delivery
-T0013,C0507,ORD-105251,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0137,C0978,ORD-110191,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,1,76,7,0.0097,billing
-T0152,C0530,ORD-105446,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0144,C0521,ORD-105355,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0094,C0863,ORD-108994,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0021,C0909,ORD-109503,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0077,C0082,ORD-100855,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0036,C0173,ORD-101775,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0113,C0077,ORD-100782,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0060,C0784,ORD-108186,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,1,80,7,0.0101,fraud
-T0043,C0942,ORD-109807,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0048,C0733,ORD-107646,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,73,7,0.0094,fraud
-T0154,C1071,ORD-110981,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,77,11,0.011,delivery
-T0125,C1156,ORD-111925,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0146,C1024,ORD-110585,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0107,C0783,ORD-108183,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0011,C0233,ORD-102448,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0017,C0028,ORD-100227,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,1,76,7,0.0097,billing
-T0111,C1033,ORD-110648,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0041,C0464,ORD-104872,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0120,C0208,ORD-102159,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0122,C0404,ORD-104288,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0001,C0851,ORD-108859,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0064,C0848,ORD-108847,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0092,C0585,ORD-106087,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,keyword match,llm_success,0,73,7,0.0094,fraud
-T0038,C0882,ORD-109188,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,Rule-based fallback for invalid LLM response,fallback_invalid_response,1,73,11,0.0106,delivery
-T0155,C0285,ORD-103031,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0104,C0815,ORD-108586,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,keyword match,llm_success,0,73,7,0.0094,fraud
-T0012,C0335,ORD-103540,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,80,7,0.0101,fraud
-T0084,C0569,ORD-105924,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0051,C1049,ORD-110766,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0143,C0339,ORD-103589,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0035,C1175,ORD-112067,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0028,C1036,ORD-110656,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,1,80,7,0.0101,fraud
-T0100,C0754,ORD-107892,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0022,C1160,ORD-111937,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0082,C0168,ORD-101719,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0127,C0976,ORD-110184,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0162,C0665,,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,788,11,0.0821,delivery
-T0109,C1080,ORD-111098,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0046,C0442,ORD-104681,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0081,C0559,ORD-105812,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,1,76,7,0.0097,billing
-T0007,C0682,ORD-107115,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0068,C0208,ORD-102159,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0085,C0031,ORD-100246,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0075,C0901,ORD-109401,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,82,7,0.0103,technical
-T0052,C1005,ORD-110381,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0066,C1199,ORD-112282,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0151,C1011,ORD-110419,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0131,C0069,ORD-100640,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,1,67,7,0.0088,technical
-T0006,C0177,ORD-101828,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0135,C0303,ORD-103236,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,77,11,0.011,technical
-T0079,C1128,ORD-111527,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0040,C0256,ORD-102771,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0093,C0131,ORD-101353,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0089,C0860,ORD-108962,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0034,C1188,ORD-112150,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0033,C0714,ORD-107436,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,1,76,7,0.0097,billing
-T0160,C0670,,,technical,Empty message; manual review recommended,fallback_empty_message,0,0,0,0.0,none
-T0087,C0797,ORD-108291,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0009,C0758,ORD-107947,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0108,C0340,ORD-103591,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0054,C0571,ORD-105954,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0025,C0610,ORD-106410,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,76,7,0.0097,billing
-T0004,C0721,ORD-107503,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0148,C1057,ORD-110793,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,80,11,0.0113,fraud
-T0088,C0852,ORD-108861,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,keyword match,llm_success,1,73,7,0.0094,fraud
-T0030,C0015,ORD-100142,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0067,C0704,ORD-107331,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0029,C0885,ORD-109201,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0129,C0237,ORD-102464,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL].,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0105,C0063,ORD-100548,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0045,C0628,ORD-106549,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0069,C0491,ORD-105103,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0010,C1190,ORD-112173,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,1,75,7,0.0096,delivery
-T0023,C0400,ORD-104257,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0106,C0197,ORD-102035,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0015,C0488,ORD-105043,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0091,C0796,ORD-108287,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,82,11,0.0115,technical
-T0126,C0996,ORD-110339,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0096,C0324,ORD-103449,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,80,7,0.0101,fraud
-T0149,C0770,ORD-108044,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0070,C1150,ORD-111821,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,1,75,7,0.0096,delivery
-T0026,C0677,ORD-107058,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0097,C0932,ORD-109706,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0132,C0282,ORD-103018,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0027,C0232,ORD-102430,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0119,C0629,ORD-106558,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0157,C1107,,,technical,Empty message; manual review recommended,fallback_empty_message,0,0,0,0.0,none
-T0058,C0287,ORD-103050,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,0,75,7,0.0096,delivery
-T0110,C0056,ORD-100455,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0018,C1135,ORD-111613,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,1,75,7,0.0096,delivery
-T0032,C1139,ORD-111658,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,80,11,0.0113,fraud
-T0003,C0591,ORD-106171,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0042,C0508,ORD-105268,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0056,C0140,ORD-101422,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0114,C0619,ORD-106475,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0083,C0356,ORD-103829,"I cannot login, the OTP never arrives on [PHONE].",technical,keyword match,llm_success,0,67,7,0.0088,technical
-T0138,C0720,ORD-107486,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,75,7,0.0096,delivery
-T0057,C1199,ORD-112282,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,1,72,7,0.0093,billing
-T0076,C0418,ORD-104437,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0019,C0579,ORD-106023,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0103,C0499,ORD-105191,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,technical,keyword match,llm_success,0,77,7,0.0098,technical
-T0164,C0794,,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,delivery,keyword match,llm_success,0,788,7,0.0809,delivery
-T0090,C0322,ORD-103437,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0112,C0432,ORD-104576,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,80,11,0.0113,fraud
-T0133,C0717,ORD-107475,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0014,C0579,ORD-106023,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL].",delivery,keyword match,llm_success,1,75,7,0.0096,delivery
-T0158,C1106,,,technical,Empty message; manual review recommended,fallback_empty_message,0,0,0,0.0,none
-T0020,C0460,ORD-104844,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,keyword match,llm_success,0,80,7,0.0101,fraud
-T0142,C0605,ORD-106355,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,delivery,keyword match,llm_success,0,77,7,0.0098,delivery
-T0086,C1132,ORD-111556,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0141,C0376,ORD-103995,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0044,C0862,ORD-108988,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,keyword match,llm_success,0,73,7,0.0094,fraud
-T0117,C0465,ORD-104875,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0078,C0586,ORD-106095,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
-T0140,C1173,ORD-112046,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,fraud,Rule-based fallback for invalid LLM response,fallback_invalid_response,1,80,7,0.0101,fraud
-T0071,C0966,ORD-110076,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL].,technical,keyword match,llm_success,0,82,7,0.0103,technical
-T0161,C0202,,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,delivery,keyword match,llm_success,0,788,7,0.0809,delivery
-T0150,C0622,ORD-106507,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,Rule-based fallback for invalid LLM response,fallback_invalid_response,0,73,11,0.0106,delivery
-T0065,C0205,ORD-102139,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,billing,keyword match,llm_success,0,76,7,0.0097,billing
-T0128,C0467,ORD-104881,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL].",fraud,keyword match,llm_success,0,73,7,0.0094,fraud
-T0005,C0404,ORD-104288,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL].",billing,keyword match,llm_success,0,72,7,0.0093,billing
-T0098,C0343,ORD-103638,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,delivery,keyword match,llm_success,0,73,7,0.0094,delivery
+ticket_id,customer_id,status,category,segment_name,priority,route,tokens_used
+T0024,C0486,classified_json,fraud,At Risk,HIGH,security_team,121
+T0073,C0080,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0095,C1087,classified_json,technical,Regular,NORMAL,support_queue,119
+T0159,C1172,skipped_empty,,Loyal,NORMAL,human_review,0
+T0080,C0910,classified_json,fraud,Regular,HIGH,security_team,121
+T0124,C0139,classified_json,fraud,Loyal,HIGH,security_team,121
+T0061,C0812,classified_json,billing,Loyal,NORMAL,support_queue,113
+T0118,C0355,classified_json,delivery,Loyal,NORMAL,support_queue,116
+T0037,C1156,classified_json,billing,Premium,HIGH,premium_desk,117
+T0002,C0881,classified_json,delivery,Regular,NORMAL,support_queue,115
+T0163,C0322,flagged_long,,Loyal,NORMAL,human_review,0
+T0031,C0958,classified_json,technical,At Risk,NORMAL,support_queue,119
+T0047,C0756,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0063,C0892,classified_json,technical,Regular,NORMAL,support_queue,108
+T0121,C0852,classified_keyword,billing,At Risk,NORMAL,support_queue,121
+T0139,C0829,classified_json,technical,Regular,NORMAL,support_queue,124
+T0115,C1025,classified_json,technical,Regular,NORMAL,support_queue,108
+T0123,C0674,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0116,C0294,flagged_invalid_output,,Loyal,NORMAL,human_review,121
+T0136,C0891,classified_json,fraud,Regular,HIGH,security_team,115
+T0008,C1177,classified_json,fraud,At Risk,HIGH,security_team,121
+T0102,C0985,classified_json,delivery,Regular,NORMAL,support_queue,119
+T0072,C0218,classified_json,fraud,Loyal,HIGH,security_team,121
+T0101,C1151,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0059,C0764,classified_json,technical,Regular,NORMAL,support_queue,108
+T0049,C0078,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0153,C0150,classified_json,billing,Regular,NORMAL,support_queue,113
+T0050,C0117,classified_keyword,delivery,At Risk,NORMAL,support_queue,119
+T0147,C0125,classified_json,technical,Loyal,NORMAL,support_queue,119
+T0074,C1119,classified_json,delivery,Loyal,NORMAL,support_queue,115
+T0156,C0328,classified_json,fraud,Regular,HIGH,security_team,121
+T0145,C0751,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0053,C0447,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0134,C0608,classified_json,delivery,At Risk,NORMAL,support_queue,119
+T0039,C0298,classified_json,technical,Loyal,NORMAL,support_queue,124
+T0016,C0962,flagged_invalid_output,,Regular,NORMAL,human_review,121
+T0055,C1063,classified_json,technical,Loyal,NORMAL,support_queue,124
+T0130,C0692,classified_json,delivery,At Risk,NORMAL,support_queue,119
+T0099,C1000,classified_json,technical,Premium,HIGH,premium_desk,124
+T0062,C0403,classified_json,delivery,Regular,NORMAL,support_queue,115
+T0013,C0507,classified_keyword,billing,At Risk,NORMAL,support_queue,121
+T0137,C0978,classified_json,billing,Regular,NORMAL,support_queue,117
+T0152,C0530,classified_json,fraud,Loyal,HIGH,security_team,121
+T0144,C0521,classified_json,fraud,Regular,HIGH,security_team,121
+T0094,C0863,classified_json,delivery,Regular,NORMAL,support_queue,119
+T0021,C0909,classified_json,billing,Loyal,NORMAL,support_queue,113
+T0077,C0082,classified_json,billing,Premium,HIGH,premium_desk,113
+T0036,C0173,classified_json,fraud,Loyal,HIGH,security_team,121
+T0113,C0077,classified_json,billing,At Risk,NORMAL,support_queue,113
+T0060,C0784,classified_json,fraud,Regular,HIGH,security_team,121
+T0043,C0942,classified_json,technical,Premium,HIGH,premium_desk,108
+T0048,C0733,classified_json,fraud,Regular,HIGH,security_team,115
+T0154,C1071,flagged_invalid_output,,Regular,NORMAL,human_review,119
+T0125,C1156,classified_keyword,billing,Premium,HIGH,premium_desk,117
+T0146,C1024,classified_json,delivery,Premium,HIGH,premium_desk,116
+T0107,C0783,classified_json,technical,Regular,NORMAL,support_queue,108
+T0011,C0233,classified_json,technical,Regular,NORMAL,support_queue,124
+T0017,C0028,classified_json,billing,Regular,NORMAL,support_queue,117
+T0111,C1033,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0041,C0464,classified_json,billing,Regular,NORMAL,support_queue,117
+T0120,C0208,classified_json,fraud,Loyal,HIGH,security_team,121
+T0122,C0404,classified_json,delivery,Regular,NORMAL,support_queue,115
+T0001,C0851,classified_json,billing,At Risk,NORMAL,support_queue,117
+T0064,C0848,classified_json,fraud,Regular,HIGH,security_team,121
+T0092,C0585,classified_json,fraud,Loyal,HIGH,security_team,115
+T0038,C0882,classified_json,delivery,At Risk,NORMAL,support_queue,115
+T0155,C0285,classified_keyword,technical,At Risk,NORMAL,support_queue,128
+T0104,C0815,classified_json,fraud,Regular,HIGH,security_team,115
+T0012,C0335,classified_json,fraud,Premium,HIGH,security_team,121
+T0084,C0569,flagged_invalid_output,,Regular,NORMAL,human_review,121
+T0051,C1049,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0143,C0339,classified_json,technical,Regular,NORMAL,support_queue,124
+T0035,C1175,classified_json,technical,Loyal,NORMAL,support_queue,119
+T0028,C1036,classified_json,fraud,Regular,HIGH,security_team,121
+T0100,C0754,classified_json,fraud,Regular,HIGH,security_team,121
+T0022,C1160,classified_json,delivery,Regular,NORMAL,support_queue,119
+T0082,C0168,classified_json,delivery,Loyal,NORMAL,support_queue,115
+T0127,C0976,classified_json,technical,Regular,NORMAL,support_queue,119
+T0162,C0665,flagged_long,,Premium,NORMAL,human_review,0
+T0109,C1080,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0046,C0442,classified_keyword,delivery,Regular,NORMAL,support_queue,123
+T0081,C0559,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0007,C0682,classified_json,technical,Premium,HIGH,premium_desk,108
+T0068,C0208,classified_json,fraud,Loyal,HIGH,security_team,121
+T0085,C0031,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0075,C0901,classified_json,technical,Loyal,NORMAL,support_queue,124
+T0052,C1005,classified_json,fraud,Regular,HIGH,security_team,121
+T0066,C1199,flagged_invalid_output,,Regular,NORMAL,human_review,119
+T0151,C1011,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0131,C0069,classified_json,technical,At Risk,NORMAL,support_queue,108
+T0006,C0177,classified_json,delivery,At Risk,NORMAL,support_queue,116
+T0135,C0303,classified_json,technical,Regular,NORMAL,support_queue,119
+T0079,C1128,classified_json,technical,Regular,NORMAL,support_queue,108
+T0040,C0256,classified_keyword,fraud,Loyal,HIGH,security_team,125
+T0093,C0131,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0089,C0860,classified_json,billing,Loyal,NORMAL,support_queue,113
+T0034,C1188,classified_json,delivery,Regular,NORMAL,support_queue,119
+T0033,C0714,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0160,C0670,skipped_empty,,Premium,NORMAL,human_review,0
+T0087,C0797,classified_json,technical,Loyal,NORMAL,support_queue,124
+T0009,C0758,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0108,C0340,classified_json,fraud,At Risk,HIGH,security_team,121
+T0054,C0571,classified_json,delivery,Regular,NORMAL,support_queue,116
+T0025,C0610,classified_json,billing,At Risk,NORMAL,support_queue,117
+T0004,C0721,classified_json,fraud,Loyal,HIGH,security_team,121
+T0148,C1057,flagged_invalid_output,,Loyal,NORMAL,human_review,121
+T0088,C0852,classified_json,fraud,At Risk,HIGH,security_team,115
+T0030,C0015,classified_keyword,delivery,At Risk,NORMAL,support_queue,120
+T0067,C0704,classified_json,technical,Regular,NORMAL,support_queue,108
+T0029,C0885,classified_json,billing,Regular,NORMAL,support_queue,117
+T0129,C0237,classified_json,billing,Regular,NORMAL,support_queue,117
+T0105,C0063,classified_json,billing,Loyal,NORMAL,support_queue,113
+T0045,C0628,classified_json,billing,Regular,NORMAL,support_queue,117
+T0069,C0491,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0010,C1190,classified_json,delivery,Loyal,NORMAL,support_queue,116
+T0023,C0400,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0106,C0197,classified_json,delivery,Loyal,NORMAL,support_queue,116
+T0015,C0488,classified_json,technical,Premium,HIGH,premium_desk,119
+T0091,C0796,classified_json,technical,At Risk,NORMAL,support_queue,124
+T0126,C0996,classified_json,delivery,Premium,HIGH,premium_desk,115
+T0096,C0324,classified_keyword,fraud,Premium,HIGH,security_team,125
+T0149,C0770,classified_json,billing,Loyal,NORMAL,support_queue,117
+T0070,C1150,flagged_invalid_output,,Loyal,NORMAL,human_review,116
+T0026,C0677,classified_json,delivery,At Risk,NORMAL,support_queue,116
+T0097,C0932,classified_json,billing,At Risk,NORMAL,support_queue,113
+T0132,C0282,classified_json,fraud,Loyal,HIGH,security_team,121
+T0027,C0232,classified_json,technical,Loyal,NORMAL,support_queue,119
+T0119,C0629,classified_json,technical,Loyal,NORMAL,support_queue,119
+T0157,C1107,skipped_empty,,Loyal,NORMAL,human_review,0
+T0058,C0287,classified_json,delivery,Loyal,NORMAL,support_queue,116
+T0110,C0056,classified_json,delivery,Regular,NORMAL,support_queue,119
+T0018,C1135,classified_json,delivery,Loyal,NORMAL,support_queue,116
+T0032,C1139,classified_json,fraud,Loyal,HIGH,security_team,121
+T0003,C0591,classified_json,technical,Loyal,NORMAL,support_queue,108
+T0042,C0508,classified_keyword,delivery,Loyal,NORMAL,support_queue,119
+T0056,C0140,classified_json,fraud,Loyal,HIGH,security_team,121
+T0114,C0619,classified_json,delivery,Regular,NORMAL,support_queue,115
+T0083,C0356,classified_json,technical,At Risk,NORMAL,support_queue,108
+T0138,C0720,classified_json,delivery,Regular,NORMAL,support_queue,116
+T0057,C1199,classified_json,billing,Regular,NORMAL,support_queue,113
+T0076,C0418,flagged_invalid_output,,At Risk,NORMAL,human_review,121
+T0019,C0579,classified_json,technical,Loyal,NORMAL,support_queue,124
+T0103,C0499,classified_json,technical,Regular,NORMAL,support_queue,119
+T0164,C0794,flagged_long,,Regular,NORMAL,human_review,0
+T0090,C0322,classified_json,delivery,Loyal,NORMAL,support_queue,119
+T0112,C0432,classified_json,fraud,Loyal,HIGH,security_team,121
+T0133,C0717,classified_json,billing,Premium,HIGH,premium_desk,113
+T0014,C0579,classified_json,delivery,Loyal,NORMAL,support_queue,116
+T0158,C1106,skipped_empty,,At Risk,NORMAL,human_review,0
+T0020,C0460,classified_keyword,fraud,Loyal,HIGH,security_team,125
+T0142,C0605,classified_json,delivery,Regular,NORMAL,support_queue,119
+T0086,C1132,classified_json,delivery,Premium,HIGH,premium_desk,115
+T0141,C0376,classified_json,billing,Regular,NORMAL,support_queue,113
+T0044,C0862,classified_json,fraud,Premium,HIGH,security_team,115
+T0117,C0465,classified_json,billing,Regular,NORMAL,support_queue,113
+T0078,C0586,classified_json,delivery,Regular,NORMAL,support_queue,115
+T0140,C1173,classified_json,fraud,Regular,HIGH,security_team,121
+T0071,C0966,classified_json,technical,Loyal,NORMAL,support_queue,124
+T0161,C0202,flagged_long,,Loyal,NORMAL,human_review,0
+T0150,C0622,classified_json,delivery,Regular,NORMAL,support_queue,115
+T0065,C0205,flagged_invalid_output,,Loyal,NORMAL,human_review,117
+T0128,C0467,classified_json,fraud,Regular,HIGH,security_team,115
+T0005,C0404,classified_json,billing,Regular,NORMAL,support_queue,113
+T0098,C0343,classified_keyword,delivery,Regular,NORMAL,support_queue,119

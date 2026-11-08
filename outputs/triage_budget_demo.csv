@@ -1,329 +1,165 @@
-ticket_id,budget_inr,estimated_cost_inr,route,cumulative_spend_inr
-T0024,0.05,0.0096,mock_llm,0.0096
-T0073,0.05,0.0092,mock_llm,0.0188
-T0095,0.05,0.0094,mock_llm,0.0282
-T0159,0.05,0.0071,empty_message_manual_review,0.0282
-T0080,0.05,0.0096,mock_llm,0.0378
-T0124,0.05,0.0096,mock_llm,0.0474
-T0061,0.05,0.0088,rule_based_fallback,0.0474
-T0118,0.05,0.0091,rule_based_fallback,0.0474
-T0037,0.05,0.0092,rule_based_fallback,0.0474
-T0002,0.05,0.009,rule_based_fallback,0.0474
-T0163,0.05,0.0805,rule_based_fallback,0.0474
-T0031,0.05,0.0094,rule_based_fallback,0.0474
-T0047,0.05,0.0083,rule_based_fallback,0.0474
-T0063,0.05,0.0083,rule_based_fallback,0.0474
-T0121,0.05,0.0092,rule_based_fallback,0.0474
-T0139,0.05,0.0099,rule_based_fallback,0.0474
-T0115,0.05,0.0083,rule_based_fallback,0.0474
-T0123,0.05,0.0083,rule_based_fallback,0.0474
-T0116,0.05,0.0096,rule_based_fallback,0.0474
-T0136,0.05,0.009,rule_based_fallback,0.0474
-T0008,0.05,0.0096,rule_based_fallback,0.0474
-T0102,0.05,0.0094,rule_based_fallback,0.0474
-T0072,0.05,0.0096,rule_based_fallback,0.0474
-T0101,0.05,0.0092,rule_based_fallback,0.0474
-T0059,0.05,0.0083,rule_based_fallback,0.0474
-T0049,0.05,0.0092,rule_based_fallback,0.0474
-T0153,0.05,0.0088,rule_based_fallback,0.0474
-T0050,0.05,0.009,rule_based_fallback,0.0474
-T0147,0.05,0.0094,rule_based_fallback,0.0474
-T0074,0.05,0.009,rule_based_fallback,0.0474
-T0156,0.05,0.0096,rule_based_fallback,0.0474
-T0145,0.05,0.0092,rule_based_fallback,0.0474
-T0053,0.05,0.0092,rule_based_fallback,0.0474
-T0134,0.05,0.0094,rule_based_fallback,0.0474
-T0039,0.05,0.0099,rule_based_fallback,0.0474
-T0016,0.05,0.0096,rule_based_fallback,0.0474
-T0055,0.05,0.0099,rule_based_fallback,0.0474
-T0130,0.05,0.0094,rule_based_fallback,0.0474
-T0099,0.05,0.0099,rule_based_fallback,0.0474
-T0062,0.05,0.009,rule_based_fallback,0.0474
-T0013,0.05,0.0092,rule_based_fallback,0.0474
-T0137,0.05,0.0092,rule_based_fallback,0.0474
-T0152,0.05,0.0096,rule_based_fallback,0.0474
-T0144,0.05,0.0096,rule_based_fallback,0.0474
-T0094,0.05,0.0094,rule_based_fallback,0.0474
-T0021,0.05,0.0088,rule_based_fallback,0.0474
-T0077,0.05,0.0088,rule_based_fallback,0.0474
-T0036,0.05,0.0096,rule_based_fallback,0.0474
-T0113,0.05,0.0088,rule_based_fallback,0.0474
-T0060,0.05,0.0096,rule_based_fallback,0.0474
-T0043,0.05,0.0083,rule_based_fallback,0.0474
-T0048,0.05,0.009,rule_based_fallback,0.0474
-T0154,0.05,0.0094,rule_based_fallback,0.0474
-T0125,0.05,0.0088,rule_based_fallback,0.0474
-T0146,0.05,0.0091,rule_based_fallback,0.0474
-T0107,0.05,0.0083,rule_based_fallback,0.0474
-T0011,0.05,0.0099,rule_based_fallback,0.0474
-T0017,0.05,0.0092,rule_based_fallback,0.0474
-T0111,0.05,0.0083,rule_based_fallback,0.0474
-T0041,0.05,0.0092,rule_based_fallback,0.0474
-T0120,0.05,0.0096,rule_based_fallback,0.0474
-T0122,0.05,0.009,rule_based_fallback,0.0474
-T0001,0.05,0.0092,rule_based_fallback,0.0474
-T0064,0.05,0.0096,rule_based_fallback,0.0474
-T0092,0.05,0.009,rule_based_fallback,0.0474
-T0038,0.05,0.009,rule_based_fallback,0.0474
-T0155,0.05,0.0099,rule_based_fallback,0.0474
-T0104,0.05,0.009,rule_based_fallback,0.0474
-T0012,0.05,0.0096,rule_based_fallback,0.0474
-T0084,0.05,0.0096,rule_based_fallback,0.0474
-T0051,0.05,0.0083,rule_based_fallback,0.0474
-T0143,0.05,0.0099,rule_based_fallback,0.0474
-T0035,0.05,0.0094,rule_based_fallback,0.0474
-T0028,0.05,0.0096,rule_based_fallback,0.0474
-T0100,0.05,0.0096,rule_based_fallback,0.0474
-T0022,0.05,0.0094,rule_based_fallback,0.0474
-T0082,0.05,0.009,rule_based_fallback,0.0474
-T0127,0.05,0.0094,rule_based_fallback,0.0474
-T0162,0.05,0.0805,rule_based_fallback,0.0474
-T0109,0.05,0.0092,rule_based_fallback,0.0474
-T0046,0.05,0.0094,rule_based_fallback,0.0474
-T0081,0.05,0.0092,rule_based_fallback,0.0474
-T0007,0.05,0.0083,rule_based_fallback,0.0474
-T0068,0.05,0.0096,rule_based_fallback,0.0474
-T0085,0.05,0.0092,rule_based_fallback,0.0474
-T0075,0.05,0.0099,rule_based_fallback,0.0474
-T0052,0.05,0.0096,rule_based_fallback,0.0474
-T0066,0.05,0.0094,rule_based_fallback,0.0474
-T0151,0.05,0.0083,rule_based_fallback,0.0474
-T0131,0.05,0.0083,rule_based_fallback,0.0474
-T0006,0.05,0.0091,rule_based_fallback,0.0474
-T0135,0.05,0.0094,rule_based_fallback,0.0474
-T0079,0.05,0.0083,rule_based_fallback,0.0474
-T0040,0.05,0.0096,rule_based_fallback,0.0474
-T0093,0.05,0.0092,rule_based_fallback,0.0474
-T0089,0.05,0.0088,rule_based_fallback,0.0474
-T0034,0.05,0.0094,rule_based_fallback,0.0474
-T0033,0.05,0.0092,rule_based_fallback,0.0474
-T0160,0.05,0.0071,empty_message_manual_review,0.0474
-T0087,0.05,0.0099,rule_based_fallback,0.0474
-T0009,0.05,0.0092,rule_based_fallback,0.0474
-T0108,0.05,0.0096,rule_based_fallback,0.0474
-T0054,0.05,0.0091,rule_based_fallback,0.0474
-T0025,0.05,0.0092,rule_based_fallback,0.0474
-T0004,0.05,0.0096,rule_based_fallback,0.0474
-T0148,0.05,0.0096,rule_based_fallback,0.0474
-T0088,0.05,0.009,rule_based_fallback,0.0474
-T0030,0.05,0.0091,rule_based_fallback,0.0474
-T0067,0.05,0.0083,rule_based_fallback,0.0474
-T0029,0.05,0.0092,rule_based_fallback,0.0474
-T0129,0.05,0.0092,rule_based_fallback,0.0474
-T0105,0.05,0.0088,rule_based_fallback,0.0474
-T0045,0.05,0.0092,rule_based_fallback,0.0474
-T0069,0.05,0.0092,rule_based_fallback,0.0474
-T0010,0.05,0.0091,rule_based_fallback,0.0474
-T0023,0.05,0.0083,rule_based_fallback,0.0474
-T0106,0.05,0.0091,rule_based_fallback,0.0474
-T0015,0.05,0.0094,rule_based_fallback,0.0474
-T0091,0.05,0.0099,rule_based_fallback,0.0474
-T0126,0.05,0.009,rule_based_fallback,0.0474
-T0096,0.05,0.0096,rule_based_fallback,0.0474
-T0149,0.05,0.0092,rule_based_fallback,0.0474
-T0070,0.05,0.0091,rule_based_fallback,0.0474
-T0026,0.05,0.0091,rule_based_fallback,0.0474
-T0097,0.05,0.0088,rule_based_fallback,0.0474
-T0132,0.05,0.0096,rule_based_fallback,0.0474
-T0027,0.05,0.0094,rule_based_fallback,0.0474
-T0119,0.05,0.0094,rule_based_fallback,0.0474
-T0157,0.05,0.0071,empty_message_manual_review,0.0474
-T0058,0.05,0.0091,rule_based_fallback,0.0474
-T0110,0.05,0.0094,rule_based_fallback,0.0474
-T0018,0.05,0.0091,rule_based_fallback,0.0474
-T0032,0.05,0.0096,rule_based_fallback,0.0474
-T0003,0.05,0.0083,rule_based_fallback,0.0474
-T0042,0.05,0.009,rule_based_fallback,0.0474
-T0056,0.05,0.0096,rule_based_fallback,0.0474
-T0114,0.05,0.009,rule_based_fallback,0.0474
-T0083,0.05,0.0083,rule_based_fallback,0.0474
-T0138,0.05,0.0091,rule_based_fallback,0.0474
-T0057,0.05,0.0088,rule_based_fallback,0.0474
-T0076,0.05,0.0096,rule_based_fallback,0.0474
-T0019,0.05,0.0099,rule_based_fallback,0.0474
-T0103,0.05,0.0094,rule_based_fallback,0.0474
-T0164,0.05,0.0805,rule_based_fallback,0.0474
-T0090,0.05,0.0094,rule_based_fallback,0.0474
-T0112,0.05,0.0096,rule_based_fallback,0.0474
-T0133,0.05,0.0088,rule_based_fallback,0.0474
-T0014,0.05,0.0091,rule_based_fallback,0.0474
-T0158,0.05,0.0071,empty_message_manual_review,0.0474
-T0020,0.05,0.0096,rule_based_fallback,0.0474
-T0142,0.05,0.0094,rule_based_fallback,0.0474
-T0086,0.05,0.009,rule_based_fallback,0.0474
-T0141,0.05,0.0088,rule_based_fallback,0.0474
-T0044,0.05,0.009,rule_based_fallback,0.0474
-T0117,0.05,0.0088,rule_based_fallback,0.0474
-T0078,0.05,0.009,rule_based_fallback,0.0474
-T0140,0.05,0.0096,rule_based_fallback,0.0474
-T0071,0.05,0.0099,rule_based_fallback,0.0474
-T0161,0.05,0.0805,rule_based_fallback,0.0474
-T0150,0.05,0.009,rule_based_fallback,0.0474
-T0065,0.05,0.0092,rule_based_fallback,0.0474
-T0128,0.05,0.009,rule_based_fallback,0.0474
-T0005,0.05,0.0088,rule_based_fallback,0.0474
-T0098,0.05,0.009,rule_based_fallback,0.0474
-T0024,5.0,0.0096,mock_llm,0.0096
-T0073,5.0,0.0092,mock_llm,0.0188
-T0095,5.0,0.0094,mock_llm,0.0282
-T0159,5.0,0.0071,empty_message_manual_review,0.0282
-T0080,5.0,0.0096,mock_llm,0.0378
-T0124,5.0,0.0096,mock_llm,0.0474
-T0061,5.0,0.0088,mock_llm,0.0562
-T0118,5.0,0.0091,mock_llm,0.0653
-T0037,5.0,0.0092,mock_llm,0.0745
-T0002,5.0,0.009,mock_llm,0.0835
-T0163,5.0,0.0805,mock_llm,0.164
-T0031,5.0,0.0094,mock_llm,0.1734
-T0047,5.0,0.0083,mock_llm,0.1817
-T0063,5.0,0.0083,mock_llm,0.19
-T0121,5.0,0.0092,mock_llm,0.1992
-T0139,5.0,0.0099,mock_llm,0.2091
-T0115,5.0,0.0083,mock_llm,0.2174
-T0123,5.0,0.0083,mock_llm,0.2257
-T0116,5.0,0.0096,mock_llm,0.2353
-T0136,5.0,0.009,mock_llm,0.2443
-T0008,5.0,0.0096,mock_llm,0.2539
-T0102,5.0,0.0094,mock_llm,0.2633
-T0072,5.0,0.0096,mock_llm,0.2729
-T0101,5.0,0.0092,mock_llm,0.2821
-T0059,5.0,0.0083,mock_llm,0.2904
-T0049,5.0,0.0092,mock_llm,0.2996
-T0153,5.0,0.0088,mock_llm,0.3084
-T0050,5.0,0.009,mock_llm,0.3174
-T0147,5.0,0.0094,mock_llm,0.3268
-T0074,5.0,0.009,mock_llm,0.3358
-T0156,5.0,0.0096,mock_llm,0.3454
-T0145,5.0,0.0092,mock_llm,0.3546
-T0053,5.0,0.0092,mock_llm,0.3638
-T0134,5.0,0.0094,mock_llm,0.3732
-T0039,5.0,0.0099,mock_llm,0.3831
-T0016,5.0,0.0096,mock_llm,0.3927
-T0055,5.0,0.0099,mock_llm,0.4026
-T0130,5.0,0.0094,mock_llm,0.412
-T0099,5.0,0.0099,mock_llm,0.4219
-T0062,5.0,0.009,mock_llm,0.4309
-T0013,5.0,0.0092,mock_llm,0.4401
-T0137,5.0,0.0092,mock_llm,0.4493
-T0152,5.0,0.0096,mock_llm,0.4589
-T0144,5.0,0.0096,mock_llm,0.4685
-T0094,5.0,0.0094,mock_llm,0.4779
-T0021,5.0,0.0088,mock_llm,0.4867
-T0077,5.0,0.0088,mock_llm,0.4955
-T0036,5.0,0.0096,mock_llm,0.5051
-T0113,5.0,0.0088,mock_llm,0.5139
-T0060,5.0,0.0096,mock_llm,0.5235
-T0043,5.0,0.0083,mock_llm,0.5318
-T0048,5.0,0.009,mock_llm,0.5408
-T0154,5.0,0.0094,mock_llm,0.5502
-T0125,5.0,0.0088,mock_llm,0.559
-T0146,5.0,0.0091,mock_llm,0.5681
-T0107,5.0,0.0083,mock_llm,0.5764
-T0011,5.0,0.0099,mock_llm,0.5863
-T0017,5.0,0.0092,mock_llm,0.5955
-T0111,5.0,0.0083,mock_llm,0.6038
-T0041,5.0,0.0092,mock_llm,0.613
-T0120,5.0,0.0096,mock_llm,0.6226
-T0122,5.0,0.009,mock_llm,0.6316
-T0001,5.0,0.0092,mock_llm,0.6408
-T0064,5.0,0.0096,mock_llm,0.6504
-T0092,5.0,0.009,mock_llm,0.6594
-T0038,5.0,0.009,mock_llm,0.6684
-T0155,5.0,0.0099,mock_llm,0.6783
-T0104,5.0,0.009,mock_llm,0.6873
-T0012,5.0,0.0096,mock_llm,0.6969
-T0084,5.0,0.0096,mock_llm,0.7065
-T0051,5.0,0.0083,mock_llm,0.7148
-T0143,5.0,0.0099,mock_llm,0.7247
-T0035,5.0,0.0094,mock_llm,0.7341
-T0028,5.0,0.0096,mock_llm,0.7437
-T0100,5.0,0.0096,mock_llm,0.7533
-T0022,5.0,0.0094,mock_llm,0.7627
-T0082,5.0,0.009,mock_llm,0.7717
-T0127,5.0,0.0094,mock_llm,0.7811
-T0162,5.0,0.0805,mock_llm,0.8616
-T0109,5.0,0.0092,mock_llm,0.8708
-T0046,5.0,0.0094,mock_llm,0.8802
-T0081,5.0,0.0092,mock_llm,0.8894
-T0007,5.0,0.0083,mock_llm,0.8977
-T0068,5.0,0.0096,mock_llm,0.9073
-T0085,5.0,0.0092,mock_llm,0.9165
-T0075,5.0,0.0099,mock_llm,0.9264
-T0052,5.0,0.0096,mock_llm,0.936
-T0066,5.0,0.0094,mock_llm,0.9454
-T0151,5.0,0.0083,mock_llm,0.9537
-T0131,5.0,0.0083,mock_llm,0.962
-T0006,5.0,0.0091,mock_llm,0.9711
-T0135,5.0,0.0094,mock_llm,0.9805
-T0079,5.0,0.0083,mock_llm,0.9888
-T0040,5.0,0.0096,mock_llm,0.9984
-T0093,5.0,0.0092,mock_llm,1.0076
-T0089,5.0,0.0088,mock_llm,1.0164
-T0034,5.0,0.0094,mock_llm,1.0258
-T0033,5.0,0.0092,mock_llm,1.035
-T0160,5.0,0.0071,empty_message_manual_review,1.035
-T0087,5.0,0.0099,mock_llm,1.0449
-T0009,5.0,0.0092,mock_llm,1.0541
-T0108,5.0,0.0096,mock_llm,1.0637
-T0054,5.0,0.0091,mock_llm,1.0728
-T0025,5.0,0.0092,mock_llm,1.082
-T0004,5.0,0.0096,mock_llm,1.0916
-T0148,5.0,0.0096,mock_llm,1.1012
-T0088,5.0,0.009,mock_llm,1.1102
-T0030,5.0,0.0091,mock_llm,1.1193
-T0067,5.0,0.0083,mock_llm,1.1276
-T0029,5.0,0.0092,mock_llm,1.1368
-T0129,5.0,0.0092,mock_llm,1.146
-T0105,5.0,0.0088,mock_llm,1.1548
-T0045,5.0,0.0092,mock_llm,1.164
-T0069,5.0,0.0092,mock_llm,1.1732
-T0010,5.0,0.0091,mock_llm,1.1823
-T0023,5.0,0.0083,mock_llm,1.1906
-T0106,5.0,0.0091,mock_llm,1.1997
-T0015,5.0,0.0094,mock_llm,1.2091
-T0091,5.0,0.0099,mock_llm,1.219
-T0126,5.0,0.009,mock_llm,1.228
-T0096,5.0,0.0096,mock_llm,1.2376
-T0149,5.0,0.0092,mock_llm,1.2468
-T0070,5.0,0.0091,mock_llm,1.2559
-T0026,5.0,0.0091,mock_llm,1.265
-T0097,5.0,0.0088,mock_llm,1.2738
-T0132,5.0,0.0096,mock_llm,1.2834
-T0027,5.0,0.0094,mock_llm,1.2928
-T0119,5.0,0.0094,mock_llm,1.3022
-T0157,5.0,0.0071,empty_message_manual_review,1.3022
-T0058,5.0,0.0091,mock_llm,1.3113
-T0110,5.0,0.0094,mock_llm,1.3207
-T0018,5.0,0.0091,mock_llm,1.3298
-T0032,5.0,0.0096,mock_llm,1.3394
-T0003,5.0,0.0083,mock_llm,1.3477
-T0042,5.0,0.009,mock_llm,1.3567
-T0056,5.0,0.0096,mock_llm,1.3663
-T0114,5.0,0.009,mock_llm,1.3753
-T0083,5.0,0.0083,mock_llm,1.3836
-T0138,5.0,0.0091,mock_llm,1.3927
-T0057,5.0,0.0088,mock_llm,1.4015
-T0076,5.0,0.0096,mock_llm,1.4111
-T0019,5.0,0.0099,mock_llm,1.421
-T0103,5.0,0.0094,mock_llm,1.4304
-T0164,5.0,0.0805,mock_llm,1.5109
-T0090,5.0,0.0094,mock_llm,1.5203
-T0112,5.0,0.0096,mock_llm,1.5299
-T0133,5.0,0.0088,mock_llm,1.5387
-T0014,5.0,0.0091,mock_llm,1.5478
-T0158,5.0,0.0071,empty_message_manual_review,1.5478
-T0020,5.0,0.0096,mock_llm,1.5574
-T0142,5.0,0.0094,mock_llm,1.5668
-T0086,5.0,0.009,mock_llm,1.5758
-T0141,5.0,0.0088,mock_llm,1.5846
-T0044,5.0,0.009,mock_llm,1.5936
-T0117,5.0,0.0088,mock_llm,1.6024
-T0078,5.0,0.009,mock_llm,1.6114
-T0140,5.0,0.0096,mock_llm,1.621
-T0071,5.0,0.0099,mock_llm,1.6309
-T0161,5.0,0.0805,mock_llm,1.7114
-T0150,5.0,0.009,mock_llm,1.7204
-T0065,5.0,0.0092,mock_llm,1.7296
-T0128,5.0,0.009,mock_llm,1.7386
-T0005,5.0,0.0088,mock_llm,1.7474
-T0098,5.0,0.009,mock_llm,1.7564
+ticket_id,customer_id,true_category,category,status,reason,tokens_used,retries
+T0024,C0486,fraud,fraud,classified_json,keyword match,69,0
+T0073,C0080,billing,billing,classified_json,keyword match,65,0
+T0095,C1087,technical,billing,classified_json,keyword match,67,0
+T0159,C1172,none,,skipped_empty,Empty message,0,0
+T0080,C0910,fraud,billing,classified_json,keyword match,69,0
+T0124,C0139,fraud,billing,classified_json,keyword match,69,0
+T0061,C0812,billing,billing,classified_json,keyword match,61,0
+T0118,C0355,delivery,delivery,classified_json,keyword match,64,0
+T0037,C1156,billing,billing,classified_json,keyword match,65,0
+T0002,C0881,delivery,delivery,classified_json,keyword match,63,1
+T0163,C0322,delivery,,flagged_long,Message exceeds 400 estimated tokens,0,0
+T0031,C0958,technical,billing,classified_json,keyword match,67,0
+T0047,C0756,technical,technical,classified_json,keyword match,56,0
+T0063,C0892,technical,technical,classified_json,keyword match,56,0
+T0121,C0852,billing,billing,classified_keyword,Keyword fallback after invalid JSON,69,0
+T0139,C0829,technical,technical,classified_json,keyword match,72,0
+T0115,C1025,technical,technical,classified_json,keyword match,56,0
+T0123,C0674,technical,technical,classified_json,keyword match,56,0
+T0116,C0294,fraud,,flagged_invalid_output,Keyword fallback after invalid JSON,69,1
+T0136,C0891,fraud,fraud,classified_json,keyword match,63,0
+T0008,C1177,fraud,fraud,classified_json,keyword match,69,0
+T0102,C0985,delivery,delivery,classified_json,keyword match,67,0
+T0072,C0218,fraud,billing,classified_json,keyword match,69,0
+T0101,C1151,billing,billing,classified_json,keyword match,65,0
+T0059,C0764,technical,technical,classified_json,keyword match,56,0
+T0049,C0078,billing,billing,classified_json,keyword match,65,0
+T0153,C0150,billing,billing,classified_json,keyword match,61,1
+T0050,C0117,delivery,delivery,classified_keyword,Keyword fallback after invalid JSON,67,0
+T0147,C0125,technical,billing,classified_json,keyword match,67,0
+T0074,C1119,delivery,delivery,classified_json,keyword match,63,0
+T0156,C0328,fraud,fraud,classified_json,keyword match,69,0
+T0145,C0751,billing,billing,classified_json,keyword match,65,0
+T0053,C0447,billing,billing,classified_json,keyword match,65,0
+T0134,C0608,delivery,delivery,classified_json,keyword match,67,0
+T0039,C0298,technical,technical,classified_json,keyword match,72,1
+T0016,C0962,fraud,,flagged_invalid_output,Keyword fallback after invalid JSON,69,0
+T0055,C1063,technical,technical,classified_json,keyword match,72,0
+T0130,C0692,delivery,delivery,classified_json,keyword match,67,0
+T0099,C1000,technical,technical,classified_json,keyword match,72,0
+T0062,C0403,delivery,delivery,classified_json,keyword match,63,0
+T0013,C0507,billing,billing,classified_keyword,Keyword fallback after invalid JSON,69,0
+T0137,C0978,billing,billing,classified_json,keyword match,65,0
+T0152,C0530,fraud,billing,classified_json,keyword match,69,1
+T0144,C0521,fraud,billing,classified_json,keyword match,69,0
+T0094,C0863,delivery,delivery,classified_json,keyword match,67,0
+T0021,C0909,billing,billing,classified_json,keyword match,61,0
+T0077,C0082,billing,billing,classified_json,keyword match,61,0
+T0036,C0173,fraud,billing,classified_json,keyword match,69,0
+T0113,C0077,billing,billing,classified_json,keyword match,61,0
+T0060,C0784,fraud,fraud,classified_json,keyword match,69,0
+T0043,C0942,technical,technical,classified_json,keyword match,56,1
+T0048,C0733,fraud,fraud,classified_json,keyword match,63,0
+T0154,C1071,delivery,,flagged_invalid_output,Keyword fallback after invalid JSON,67,0
+T0125,C1156,billing,billing,classified_keyword,Keyword fallback after invalid JSON,65,0
+T0146,C1024,delivery,delivery,classified_json,keyword match,64,0
+T0107,C0783,technical,technical,classified_json,keyword match,56,0
+T0011,C0233,technical,technical,classified_json,keyword match,72,0
+T0017,C0028,billing,billing,classified_json,keyword match,65,0
+T0111,C1033,technical,technical,classified_json,keyword match,56,1
+T0041,C0464,billing,billing,classified_json,keyword match,65,0
+T0120,C0208,fraud,fraud,classified_json,keyword match,69,0
+T0122,C0404,delivery,delivery,classified_json,keyword match,63,0
+T0001,C0851,billing,billing,classified_json,keyword match,65,0
+T0064,C0848,fraud,fraud,classified_json,keyword match,69,0
+T0092,C0585,fraud,fraud,classified_json,keyword match,63,0
+T0038,C0882,delivery,delivery,classified_json,keyword match,63,0
+T0155,C0285,technical,technical,classified_keyword,Keyword fallback after invalid JSON,76,1
+T0104,C0815,fraud,fraud,classified_json,keyword match,63,0
+T0012,C0335,fraud,billing,classified_json,keyword match,69,0
+T0084,C0569,fraud,,flagged_invalid_output,Keyword fallback after invalid JSON,69,0
+T0051,C1049,technical,technical,classified_json,keyword match,56,0
+T0143,C0339,technical,technical,classified_json,keyword match,72,0
+T0035,C1175,technical,billing,classified_json,keyword match,67,0
+T0028,C1036,fraud,fraud,classified_json,keyword match,69,0
+T0100,C0754,fraud,fraud,classified_json,keyword match,69,1
+T0022,C1160,delivery,delivery,classified_json,keyword match,67,0
+T0082,C0168,delivery,delivery,classified_json,keyword match,63,0
+T0127,C0976,technical,billing,classified_json,keyword match,67,0
+T0162,C0665,delivery,,flagged_long,Message exceeds 400 estimated tokens,0,0
+T0109,C1080,billing,billing,classified_json,keyword match,65,0
+T0046,C0442,delivery,delivery,classified_keyword,Keyword fallback after invalid JSON,71,0
+T0081,C0559,billing,billing,classified_json,keyword match,65,0
+T0007,C0682,technical,technical,classified_json,keyword match,56,0
+T0068,C0208,fraud,billing,classified_json,keyword match,69,1
+T0085,C0031,billing,billing,classified_json,keyword match,65,0
+T0075,C0901,technical,technical,classified_json,keyword match,72,0
+T0052,C1005,fraud,fraud,classified_json,keyword match,69,0
+T0066,C1199,delivery,,flagged_invalid_output,Keyword fallback after invalid JSON,67,0
+T0151,C1011,technical,technical,classified_json,keyword match,56,0
+T0131,C0069,technical,technical,classified_json,keyword match,56,0
+T0006,C0177,delivery,delivery,classified_json,keyword match,64,0
+T0135,C0303,technical,billing,classified_json,keyword match,67,1
+T0079,C1128,technical,technical,classified_json,keyword match,56,0
+T0040,C0256,fraud,fraud,classified_keyword,Keyword fallback after invalid JSON,73,0
+T0093,C0131,billing,,budget_exhausted,Token budget reached,0,0
+T0089,C0860,billing,,budget_exhausted,Token budget reached,0,0
+T0034,C1188,delivery,,budget_exhausted,Token budget reached,0,0
+T0033,C0714,billing,,budget_exhausted,Token budget reached,0,0
+T0160,C0670,none,,skipped_empty,Empty message,0,0
+T0087,C0797,technical,,budget_exhausted,Token budget reached,0,0
+T0009,C0758,billing,,budget_exhausted,Token budget reached,0,0
+T0108,C0340,fraud,,budget_exhausted,Token budget reached,0,0
+T0054,C0571,delivery,,budget_exhausted,Token budget reached,0,0
+T0025,C0610,billing,,budget_exhausted,Token budget reached,0,0
+T0004,C0721,fraud,,budget_exhausted,Token budget reached,0,0
+T0148,C1057,fraud,,budget_exhausted,Token budget reached,0,0
+T0088,C0852,fraud,,budget_exhausted,Token budget reached,0,0
+T0030,C0015,delivery,,budget_exhausted,Token budget reached,0,0
+T0067,C0704,technical,,budget_exhausted,Token budget reached,0,0
+T0029,C0885,billing,,budget_exhausted,Token budget reached,0,0
+T0129,C0237,billing,,budget_exhausted,Token budget reached,0,0
+T0105,C0063,billing,,budget_exhausted,Token budget reached,0,0
+T0045,C0628,billing,,budget_exhausted,Token budget reached,0,0
+T0069,C0491,billing,,budget_exhausted,Token budget reached,0,0
+T0010,C1190,delivery,,budget_exhausted,Token budget reached,0,0
+T0023,C0400,technical,,budget_exhausted,Token budget reached,0,0
+T0106,C0197,delivery,,budget_exhausted,Token budget reached,0,0
+T0015,C0488,technical,,budget_exhausted,Token budget reached,0,0
+T0091,C0796,technical,,budget_exhausted,Token budget reached,0,0
+T0126,C0996,delivery,,budget_exhausted,Token budget reached,0,0
+T0096,C0324,fraud,,budget_exhausted,Token budget reached,0,0
+T0149,C0770,billing,,budget_exhausted,Token budget reached,0,0
+T0070,C1150,delivery,,budget_exhausted,Token budget reached,0,0
+T0026,C0677,delivery,,budget_exhausted,Token budget reached,0,0
+T0097,C0932,billing,,budget_exhausted,Token budget reached,0,0
+T0132,C0282,fraud,,budget_exhausted,Token budget reached,0,0
+T0027,C0232,technical,,budget_exhausted,Token budget reached,0,0
+T0119,C0629,technical,,budget_exhausted,Token budget reached,0,0
+T0157,C1107,none,,skipped_empty,Empty message,0,0
+T0058,C0287,delivery,,budget_exhausted,Token budget reached,0,0
+T0110,C0056,delivery,,budget_exhausted,Token budget reached,0,0
+T0018,C1135,delivery,,budget_exhausted,Token budget reached,0,0
+T0032,C1139,fraud,,budget_exhausted,Token budget reached,0,0
+T0003,C0591,technical,,budget_exhausted,Token budget reached,0,0
+T0042,C0508,delivery,,budget_exhausted,Token budget reached,0,0
+T0056,C0140,fraud,,budget_exhausted,Token budget reached,0,0
+T0114,C0619,delivery,,budget_exhausted,Token budget reached,0,0
+T0083,C0356,technical,,budget_exhausted,Token budget reached,0,0
+T0138,C0720,delivery,,budget_exhausted,Token budget reached,0,0
+T0057,C1199,billing,,budget_exhausted,Token budget reached,0,0
+T0076,C0418,fraud,,budget_exhausted,Token budget reached,0,0
+T0019,C0579,technical,,budget_exhausted,Token budget reached,0,0
+T0103,C0499,technical,,budget_exhausted,Token budget reached,0,0
+T0164,C0794,delivery,,flagged_long,Message exceeds 400 estimated tokens,0,0
+T0090,C0322,delivery,,budget_exhausted,Token budget reached,0,0
+T0112,C0432,fraud,,budget_exhausted,Token budget reached,0,0
+T0133,C0717,billing,,budget_exhausted,Token budget reached,0,0
+T0014,C0579,delivery,,budget_exhausted,Token budget reached,0,0
+T0158,C1106,none,,skipped_empty,Empty message,0,0
+T0020,C0460,fraud,,budget_exhausted,Token budget reached,0,0
+T0142,C0605,delivery,,budget_exhausted,Token budget reached,0,0
+T0086,C1132,delivery,,budget_exhausted,Token budget reached,0,0
+T0141,C0376,billing,,budget_exhausted,Token budget reached,0,0
+T0044,C0862,fraud,,budget_exhausted,Token budget reached,0,0
+T0117,C0465,billing,,budget_exhausted,Token budget reached,0,0
+T0078,C0586,delivery,,budget_exhausted,Token budget reached,0,0
+T0140,C1173,fraud,,budget_exhausted,Token budget reached,0,0
+T0071,C0966,technical,,budget_exhausted,Token budget reached,0,0
+T0161,C0202,delivery,,flagged_long,Message exceeds 400 estimated tokens,0,0
+T0150,C0622,delivery,,budget_exhausted,Token budget reached,0,0
+T0065,C0205,billing,,budget_exhausted,Token budget reached,0,0
+T0128,C0467,fraud,,budget_exhausted,Token budget reached,0,0
+T0005,C0404,billing,,budget_exhausted,Token budget reached,0,0
+T0098,C0343,delivery,,budget_exhausted,Token budget reached,0,0

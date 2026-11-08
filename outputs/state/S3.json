@@ -57,7 +57,10 @@
     }
   ],
   "tool_steps": 4,
+  "llm_calls": 5,
+  "tokens_used": 805,
   "completed": true,
   "final_text": "ESCALATE: refund above INR 1000 sent to a human lead.",
-  "outcome": "ESCALATE"
+  "outcome": "ESCALATE",
+  "fallback_reason": null
 }

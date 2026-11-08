@@ -22,7 +22,10 @@
     }
   ],
   "tool_steps": 1,
+  "llm_calls": 2,
+  "tokens_used": 76,
   "completed": true,
   "final_text": "NOT_FOUND: no such order.",
-  "outcome": "NOT_FOUND"
+  "outcome": "NOT_FOUND",
+  "fallback_reason": null
 }

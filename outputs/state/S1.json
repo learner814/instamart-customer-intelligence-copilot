@@ -55,7 +55,10 @@
     }
   ],
   "tool_steps": 4,
+  "llm_calls": 5,
+  "tokens_used": 800,
   "completed": true,
   "final_text": "REFUND: INR 128.25 issued.",
-  "outcome": "REFUND"
+  "outcome": "REFUND",
+  "fallback_reason": null
 }

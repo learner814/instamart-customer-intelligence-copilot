@@ -265,22 +265,18 @@ def execute_tool(name, arguments, scenario_id):
 # 9. OUTCOME DETECTION
 # --------------------------------------------------
 
-def classify_outcome(final_text, tool_results, fallback=False):
-
-    if fallback:
-        return "FALLBACK"
+def classify_outcome(final_text, tool_results, fallback_reason=None):
+    if fallback_reason:
+        return fallback_reason
 
     text = (final_text or "").upper()
 
     if text.startswith("REFUND:"):
         return "REFUND"
-
     if text.startswith("ESCALATE:"):
         return "ESCALATE"
-
     if text.startswith("NOT_FOUND"):
         return "NOT_FOUND"
-
     if text.startswith("DENIED"):
         return "DENIED"
 
@@ -295,7 +291,15 @@ def classify_outcome(final_text, tool_results, fallback=False):
 # 10. REFUND REACT AGENT
 # --------------------------------------------------
 
-def run_scenario(scenario, crash_after=None, resume=False):
+def run_scenario(
+    scenario,
+    crash_after=None,
+    resume=False,
+    max_iterations=6,
+    token_limit=6000,
+    time_limit_seconds=10
+):
+    import time
 
     scenario_id = str(scenario["scenario_id"])
     customer_message = str(scenario["message"])
@@ -326,44 +330,67 @@ def run_scenario(scenario, crash_after=None, resume=False):
             ],
             "tool_results": [],
             "tool_steps": 0,
+            "llm_calls": 0,
+            "tokens_used": 0,
             "completed": False
         }
 
-    consecutive_same_tool = 0
-    previous_tool = None
+    # Restore counters when resuming
+    state.setdefault("llm_calls", 0)
+    state.setdefault("tokens_used", 0)
+    state.setdefault("tool_results", [])
+    state.setdefault("tool_steps", 0)
+
+    start_time = time.monotonic()
     final_text = ""
-    fallback = False
+    fallback_reason = None
 
-    for _ in range(12):
+    for iteration in range(max_iterations):
 
+        # TIME LIMIT CHECK
+        elapsed = time.monotonic() - start_time
+
+        if elapsed >= time_limit_seconds:
+            fallback_reason = "FALLBACK_TIMEOUT"
+            final_text = (
+                "FALLBACK: Time limit reached. "
+                "Please hand this request to a human support agent."
+            )
+            print("Time limit reached. Safe fallback activated.")
+            break
+
+        # MODEL CALL
         response = mock_llm.chat(state["messages"])
+        state["llm_calls"] += 1
+
+        call_tokens = getattr(
+            response.usage, "total_tokens", 0
+        )
+        state["tokens_used"] += call_tokens
 
         message = response.choices[0].message
-
         final_text = message.content or ""
         tool_calls = message.tool_calls or []
 
+        # TOKEN LIMIT CHECK
+        if state["tokens_used"] > token_limit:
+            fallback_reason = "FALLBACK_TOKEN_LIMIT"
+            final_text = (
+                "FALLBACK: Token limit exceeded. "
+                "Please hand this request to a human support agent."
+            )
+            print("Token limit exceeded. Safe fallback activated.")
+            break
+
+        # No more tool calls means the agent has finished
         if not tool_calls:
             break
 
+        # Execute requested tools
         for tool_call in tool_calls:
 
             tool_name = tool_call.name
             tool_arguments = tool_call.arguments
-
-            # Detect repeated tool calls
-            if tool_name == previous_tool:
-                consecutive_same_tool += 1
-            else:
-                consecutive_same_tool = 1
-
-            previous_tool = tool_name
-
-            if consecutive_same_tool >= 3:
-                print("Repeated tool loop detected.")
-                print("Safe fallback activated.")
-                fallback = True
-                break
 
             result = execute_tool(
                 tool_name,
@@ -380,32 +407,37 @@ def run_scenario(scenario, crash_after=None, resume=False):
                 "content": json.dumps(result)
             })
 
-            # Save progress after every tool
+            # Save checkpoint after every tool observation
             save_state(scenario_id, state)
 
             print(f"  Tool: {tool_name}")
 
-            # Simulate a crash for resume testing
+            # Simulate crash for checkpoint/resume testing
             if crash_after is not None:
                 if state["tool_steps"] >= crash_after:
                     print("\nSIMULATED CRASH: Progress saved.")
                     return False
 
-        if fallback:
+        # Stop after six model calls if the agent still requests tools
+        if iteration == max_iterations - 1:
+            fallback_reason = "FALLBACK_MAX_ITERATIONS"
+            final_text = (
+                "FALLBACK: Maximum iteration limit reached. "
+                "Please hand this request to a human support agent."
+            )
+            print("Maximum iterations reached. Safe fallback activated.")
             break
-
-    if fallback:
-        final_text = "FALLBACK: Repeated tool calls detected."
 
     outcome = classify_outcome(
         final_text,
         state["tool_results"],
-        fallback
+        fallback_reason
     )
 
     state["completed"] = True
     state["final_text"] = final_text
     state["outcome"] = outcome
+    state["fallback_reason"] = fallback_reason
 
     save_state(scenario_id, state)
 
@@ -417,6 +449,8 @@ def run_scenario(scenario, crash_after=None, resume=False):
         "actual_outcome": outcome,
         "final_answer": final_text,
         "tool_steps": state["tool_steps"],
+        "llm_calls": state["llm_calls"],
+        "tokens_used": state["tokens_used"],
         "timestamp": datetime.now().isoformat()
     }
 
@@ -425,6 +459,8 @@ def run_scenario(scenario, crash_after=None, resume=False):
     print(f"  Expected: {scenario['expected_outcome']}")
     print(f"  Actual:   {outcome}")
     print(f"  Answer:   {final_text}")
+    print(f"  Model calls: {state['llm_calls']}")
+    print(f"  Tokens used: {state['tokens_used']}")
 
     return True
 

@@ -44,7 +44,10 @@
     }
   ],
   "tool_steps": 3,
+  "llm_calls": 4,
+  "tokens_used": 546,
   "completed": true,
   "final_text": "DENIED: delivery was within 45 minutes.",
-  "outcome": "DENIED"
+  "outcome": "DENIED",
+  "fallback_reason": null
 }

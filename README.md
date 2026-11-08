@@ -1,274 +1,111 @@
 # Instamart Customer Intelligence & Support Copilot
 
-## 1. Project Overview
+## Overview
 
-The Instamart Customer Intelligence & Support Copilot is a Python-based project that combines Data Analytics, Machine Learning, and AI-based techniques to understand customer behaviour and improve customer support operations.
+The Instamart Customer Intelligence & Support Copilot is an offline Python capstone project combining data engineering, SQL analytics, machine learning, ticket classification, policy retrieval (RAG), and a tool-using refund support agent.
 
-The project analyses customer information, order history, and support tickets. It identifies customer segments, predicts customer lapse risk, classifies support tickets, retrieves information from policy documents, and demonstrates an automated refund support agent.
+The project uses generated sample Instamart-style data and a local mock LLM. It does not connect to Instamart, a payment gateway, or an external LLM API. The supplied `generate_data.py` and `mock_llm.py` are used without modification.
 
-This is an educational prototype developed using sample datasets.
+## Reproduce
 
-## 2. Project Objectives
+### Requirements
 
-- Generate and clean customer, product, order, and support ticket data.
-- Perform SQL-based data analysis.
-- Analyse customer purchasing behaviour using RFM analysis.
-- Group customers using K-Means clustering.
-- Predict customers who may stop purchasing.
-- Classify customer support tickets into different categories.
-- Retrieve relevant information from company policy documents.
-- Automate refund-related support tasks using a ReAct-style agent.
-- Demonstrate error handling, checkpointing, and duplicate-refund protection.
+- Python 3.11 or later
+- Packages listed in `requirements.txt`
+- macOS, Linux, or Windows with Python available
 
-## 3. Technologies Used
+### Setup
 
-| Technology | Purpose |
-|---|---|
-| Python | Main programming language |
-| Pandas | Data cleaning and analysis |
-| NumPy | Numerical operations |
-| Scikit-learn | Machine Learning and clustering |
-| Matplotlib | Data visualisation |
-| SQLite | Database management |
-| JSON and CSV | Data storage and exchange |
-| VS Code | Development environment |
-
-## 4. Project Modules
-
-### Part A: Data Generation and Cleaning
-
-Generated sample datasets containing:
-- Customers
-- Products
-- Orders
-- Customer support tickets
-
-Cleaned the datasets by handling duplicate records, missing values, invalid values, and inconsistent formats.
-
-Created a SQLite database and performed SQL queries to analyse the data.
-
-Data validation was performed to ensure the cleaned datasets were suitable for further analysis.
-
-### Part B: Customer Intelligence and Machine Learning
-
-**1. RFM Analysis**
-
-RFM stands for:
-- Recency: How recently a customer purchased.
-- Frequency: How often a customer purchased.
-- Monetary: How much money a customer spent.
-
-RFM analysis helps understand customer purchasing behaviour.
-
-**2. Customer Segmentation**
-
-Used the K-Means clustering algorithm to divide customers into four groups based on their purchasing behaviour.
-
-PCA was used to reduce the dimensions of customer data for visualisation.
-
-**3. Customer Lapse Prediction**
-
-Developed Logistic Regression and Random Forest models to predict whether customers may become inactive.
-
-The Random Forest model achieved an F1-score of approximately 0.66 on the test dataset.
-
-### Part C: Customer Support Ticket Classification
-
-Developed a ticket classification system to categorise customer support messages into:
-
-- Billing
-- Delivery
-- Fraud
-- Technical
-
-Implemented:
-- Input validation
-- Personal information masking
-- LLM response parsing
-- Retry handling
-- Invalid response handling
-- Rule-based fallback
-- Simulated budget-based routing
-
-A local mock LLM was used to simulate AI responses and failure conditions. No external LLM API was connected.
-
-### Part D: Policy RAG and Refund ReAct Agent
-
-**1. Policy RAG System**
-
-Created five policy documents:
-
-- Delivery Policy
-- Escalation Policy
-- Payment Policy
-- Privacy Policy
-- Refund Policy
-
-Developed a retrieval-based question-answering system that searches policy information and provides answers using the local mock LLM.
-
-Evaluated the system using a set of 14 questions.
-
-**2. Refund ReAct Agent**
-
-Developed a refund support agent that uses the following tools:
-
-- get_order
-- search_policy
-- calculate_refund
-- issue_refund
-- escalate_to_human
-
-The agent checks order details, retrieves refund policies, calculates eligible refund amounts, processes eligible refunds, and escalates cases requiring human approval.
-
-**3. Reliability and Safety**
-
-Implemented:
-- JSONL execution logs
-- Refund ledger
-- Checkpoint storage
-- Resume functionality
-- Duplicate-refund protection
-- Repeated-tool loop detection
-- Safe fallback handling
-
-Tested seven scenarios covering successful refunds, escalation, denied refunds, missing orders, and repeated tool calls.
-
-All seven scenarios produced their expected outcomes in the test run.
-
-## 5. Project Folder Structure
-
-```text
-instamart-copilot/
-│
-├── data/
-│   ├── raw/
-│   ├── clean/
-│   ├── policies/
-│   └── instamart.db
-│
-├── src/
-│   ├── clean_data.py
-│   ├── validate.py
-│   ├── customer_segments.py
-│   ├── cluster_customers.py
-│   ├── lapse_prediction.py
-│   ├── ticket_triage.py
-│   ├── policy_rag.py
-│   └── refund_agent.py
-│
-├── sql/
-│   └── queries.sql
-│
-├── outputs/
-│   ├── rfm_analysis.csv
-│   ├── customer_segments.csv
-│   ├── retention_list.csv
-│   ├── lapse_model.joblib
-│   ├── triage_results.csv
-│   ├── triage_budget_demo.csv
-│   ├── policy_eval_results.csv
-│   ├── agent_runs.jsonl
-│   ├── refund_ledger.jsonl
-│   └── state/
-│
-├── generate_data.py
-├── mock_llm.py
-└── README.md
-```
-
-## 6. Installation and Execution
-
-### Step 1: Open the project folder
-
-Open the `instamart-copilot` folder in Visual Studio Code.
-
-### Step 2: Activate the virtual environment
+From the project root, create and activate a virtual environment, then install dependencies:
 
 ```bash
+python3 -m venv .venv
 source .venv/bin/activate
+python3 -m pip install -r requirements.txt
 ```
 
-### Step 3: Generate sample data
+On Windows PowerShell, activate with `.venv\\Scripts\\Activate.ps1` and use `python` instead of `python3` if needed.
+
+### Run the complete pipeline
+
+Run these commands from the project root, in this order:
 
 ```bash
 python3 generate_data.py
-```
-
-### Step 4: Clean and validate the data
-
-```bash
 python3 src/clean_data.py
 python3 src/validate.py
-```
-
-### Step 5: Run customer analysis
-
-```bash
 python3 src/customer_segments.py
 python3 src/cluster_customers.py
 python3 src/lapse_prediction.py
-```
-
-### Step 6: Run ticket classification
-
-```bash
 python3 src/ticket_triage.py
-```
-
-### Step 7: Run the policy RAG system
-
-```bash
 python3 src/policy_rag.py
-```
-
-### Step 8: Run the refund agent
-
-```bash
 python3 src/refund_agent.py
 ```
 
-**Note:** Run the scripts in the order shown. The project uses generated sample data and a local mock LLM.
+The scripts create or refresh the cleaned data, SQLite database, models, evaluation tables, logs, refund ledger, and checkpoint files under `data/`, `outputs/`, and `state/`.
 
-## 7. Testing and Results
+## Part A
 
-The project includes the following tests:
+### Data generation and cleaning
 
-- Data cleaning and validation checks.
-- RFM customer analysis.
-- K-Means clustering evaluation.
-- PCA explained variance analysis.
-- Logistic Regression and Random Forest model evaluation.
-- Customer support ticket classification.
-- Retry and fallback handling.
-- Policy retrieval evaluation.
-- Seven refund agent test scenarios.
-- Crash and resume testing.
-- Duplicate-refund verification.
+`generate_data.py` creates synthetic customers, products, orders, support tickets, policy documents, policy evaluation questions, and refund-agent scenarios. `src/clean_data.py` audits and cleans the generated CSV data and builds `data/instamart.db` with the `customers`, `products`, and `orders` tables.
 
-The customer lapse prediction Random Forest model achieved approximately 0.66 F1-score on the test dataset.
+### SQL analysis
 
-The refund agent successfully matched the expected outcomes in all seven test scenarios.
+`sql/queries.sql` contains seven queries covering customer and product counts, order status, completed-order revenue, highest-spending customers, average delivery time by product category, and orders by city.
 
-These results apply to the generated sample data and test scenarios; they do not guarantee performance on real customer data.
+### Validation
 
-## 8. Limitations
+`src/validate.py` checks expected row counts, unique order IDs, removal of pending orders, missing values, delivery-time conditions, completed revenue, city count, and SQLite tables. The reproduced run passed all 12 validation assertions.
 
-- The project uses generated sample data rather than actual Instamart customer data.
-- The LLM is simulated using a local mock implementation.
-- The system is not connected to the real Instamart platform.
-- Refund processing is demonstrated using a local ledger, not a real payment gateway.
-- Model performance may change when tested with real-world data.
+## Part B
 
-## 9. Conclusion
+### RFM and customer segmentation
 
-The Instamart Customer Intelligence & Support Copilot demonstrates how Data Analytics, Machine Learning, policy retrieval, and automated support workflows can be combined in a single project.
+The project calculates customer recency, frequency, and monetary value, then applies K-Means clustering. It compares cluster counts using inertia and silhouette scores, profiles the four selected customer segments, and uses PCA to reduce the feature space for analysis. Outputs include `outputs/rfm_analysis.csv` and `outputs/customer_segments.csv`.
 
-It helps analyse customer behaviour, identify potentially inactive customers, classify support requests, retrieve policy information, and demonstrate refund handling.
+### Lapse prediction
 
-This project provides practical experience in Python programming, data analysis, machine learning, SQL, and AI-based application development.
+`src/lapse_prediction.py` builds pre-September 2025 customer features and uses September 2025 completed-order activity as the lapse label. Features are created from orders before 1 September 2025; September activity is used for the target label, not as a predictor. Logistic Regression and Random Forest models are trained and evaluated, including a class-balancing experiment. The final fitted model is saved as `outputs/lapse_model.joblib`, and a premium-customer retention shortlist is saved as `outputs/retention_list.csv`.
 
-## 10. Author
+In the reproduced run, the Random Forest test F1-score was approximately 0.659. Model scores are based on synthetic data and are not evidence of real-world business performance.
 
-**Project:** Instamart Customer Intelligence & Support Copilot
+## Part C
 
-**Project Type:** Academic / Capstone Project
+### Privacy-aware support ticket triage
+
+`src/ticket_triage.py` processes 164 generated tickets. It applies empty-input and estimated-token-length guardrails, redacts email addresses, phone numbers, and order IDs before model calls, and uses zero-shot and few-shot classification prompts for comparison.
+
+The implementation includes JSON response validation, a single-category keyword fallback, retry handling with exponential jitter, token-budget accounting, and final routing to human review, security, premium, or general support queues. It writes:
+
+- `outputs/triage_prompt_comparison.csv`
+- `outputs/triage_budget_demo.csv`
+- `outputs/triage_results.csv`
+
+In the reproduced run, 4 empty and 4 long tickets were guarded, all 278 planted PII instances were redacted, and few-shot accuracy was 100% across the 147 tickets that received a valid classification. Accuracy is measured against the generated ticket labels.
+
+## Part D
+
+### Policy RAG
+
+Five text policy documents are split into 40-word chunks with 10-word overlap. A default `TfidfVectorizer()` indexes the chunks, and cosine similarity retrieves the top three chunks for a question. The policy assistant is instructed to answer only from retrieved context and to return a fixed fallback when the information is unavailable.
+
+The evaluation uses 14 questions: 12 answerable and 2 unsupported. The project also repeats the evaluation with zero overlap to demonstrate the effect of chunk boundaries. Outputs are `outputs/policy_eval_results.csv`, `outputs/policy_eval_zero_overlap.csv`, and `outputs/policy_rag_report.md`.
+
+In the reproduced run, the 10-word-overlap configuration achieved 12/12 source matches, 12/12 expected-fact matches, and 2/2 correct unsupported-question fallbacks. The zero-overlap run achieved 10/12 expected-fact matches, illustrating why overlap is useful.
+
+### Refund ReAct agent
+
+`src/refund_agent.py` implements five tools: `get_order`, `search_policy`, `calculate_refund`, `issue_refund`, and `escalate_to_human`. The agent checks order status and delivery time, applies the refund threshold, and requires human approval for refunds above INR 1000. It also uses iteration, token, and time limits with human-handoff fallbacks.
+
+The agent records tool observations in JSONL logs, writes a refund ledger, checkpoints after tool observations, and supports resuming an interrupted run. Idempotency checks prevent duplicate refund entries. Seven scenarios cover automatic refunds, escalation, denials, missing orders, and a repeated-tool loop. Additional demonstrations cover token-limit, timeout, and maximum-iteration fallbacks.
+
+The reproduced run matched all seven expected scenario outcomes. The resume demonstration completed the tool sequence `get_order`, `search_policy`, `calculate_refund`, and `issue_refund`.
+
+## Limitations and Next Steps
+
+- All customer, order, ticket, and policy-evaluation data are synthetic.
+- The local mock LLM simulates model responses and transient failures; it is not a production language model.
+- The SQLite database and refund ledger are local demonstrations, not live Instamart or payment systems.
+- The machine-learning results may not generalise to real customer behaviour.
+- A production version would require approved data access, security review, monitoring, human approval workflows, model evaluation on representative data, and integration testing.
