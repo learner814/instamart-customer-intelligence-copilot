@@ -1,445 +1,337 @@
 
+"""Customer Support Policy RAG using TF-IDF and an offline mock LLM."""
+
+import csv
 import re
 import sys
 from pathlib import Path
 
-import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
-# --------------------------------------------------
-# 1. PROJECT PATHS
-# --------------------------------------------------
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
-PROJECT_DIR = Path(__file__).resolve().parent.parent
-
-POLICY_DIR = PROJECT_DIR / "data" / "policies"
-RAW_DIR = PROJECT_DIR / "data" / "raw"
-OUTPUT_DIR = PROJECT_DIR / "outputs"
-
-OUTPUT_DIR.mkdir(exist_ok=True)
-
-EVALUATION_FILE = RAW_DIR / "policy_eval.csv"
-RESULT_FILE = OUTPUT_DIR / "policy_eval_results.csv"
-
-sys.path.insert(0, str(PROJECT_DIR))
-import mock_llm
+from mock_llm import chat, reset
 
 
-# --------------------------------------------------
-# 2. LOAD POLICY DOCUMENTS
-# --------------------------------------------------
+POLICY_DIR = ROOT / "data" / "policies"
+EVAL_FILE = ROOT / "data" / "raw" / "policy_eval.csv"
+OUTPUT_FILE = ROOT / "outputs" / "policy_eval_results.csv"
+
+CHUNK_SIZE = 40
+CHUNK_OVERLAP = 10
+TOP_K = 3
+
 
 def load_policies():
-
+    """Load policy documents from the policies folder."""
     policies = {}
 
-    for file_path in POLICY_DIR.glob("*.txt"):
-
-        policies[file_path.name] = file_path.read_text(
-            encoding="utf-8"
-        )
+    for path in sorted(POLICY_DIR.glob("*.txt")):
+        policies[path.name] = path.read_text(encoding="utf-8")
 
     return policies
 
 
-# --------------------------------------------------
-# 3. SPLIT POLICY DOCUMENTS INTO SENTENCES
-# --------------------------------------------------
-
-def split_sentences(policies):
+def split_into_chunks(policies, chunk_size=CHUNK_SIZE,
+                      overlap=CHUNK_OVERLAP):
+    """Split policy documents into overlapping word chunks."""
 
     chunks = []
 
-    for filename, content in policies.items():
+    for source, text in policies.items():
+        words = text.split()
 
-        sentences = re.split(r"(?<=[.!?])\s+|\n+", content)
+        if not words:
+            continue
 
-        for sentence in sentences:
+        step = max(1, chunk_size - overlap)
 
-            sentence = sentence.strip()
+        for start in range(0, len(words), step):
+            chunk_words = words[start:start + chunk_size]
 
-            if sentence:
+            if not chunk_words:
+                break
 
-                chunks.append({
-                    "source": filename,
-                    "text": sentence
-                })
+            chunks.append({
+                "source": source,
+                "text": " ".join(chunk_words)
+            })
+
+            if start + chunk_size >= len(words):
+                break
 
     return chunks
 
 
-# --------------------------------------------------
-# 4. RETRIEVE RELEVANT POLICY SENTENCES
-# --------------------------------------------------
+def build_index(chunks):
+    """Build the TF-IDF search index."""
 
-def tokenize(text):
+    if not chunks:
+        raise ValueError("No policy chunks were created.")
 
-    return set(
-        re.findall(r"\b[a-z0-9]+\b", text.lower())
+    vectorizer = TfidfVectorizer(stop_words="english")
+
+    matrix = vectorizer.fit_transform(
+        [chunk["text"] for chunk in chunks]
     )
 
+    return vectorizer, matrix
 
-def retrieve(question, chunks, top_k=3):
 
-    question_words = tokenize(question)
+def retrieve(question, chunks, vectorizer, matrix, top_k=TOP_K):
+    """Find the most relevant policy chunks."""
 
-    scored_chunks = []
+    question_vector = vectorizer.transform([question])
 
-    for chunk in chunks:
+    similarities = cosine_similarity(
+        question_vector, matrix
+    ).flatten()
 
-        sentence_words = tokenize(chunk["text"])
+    ranked_indices = similarities.argsort()[::-1]
 
-        overlap = len(
-            question_words.intersection(sentence_words)
-        )
+    results = []
 
-        score = overlap
+    for index in ranked_indices:
+        if similarities[index] > 0:
+            results.append(chunks[index])
 
-        question_lower = question.lower()
-        sentence_lower = chunk["text"].lower()
+        if len(results) >= top_k:
+            break
 
-        # Keyword relevance boosts
+    return results
 
-        if "refund" in question_lower and "refund" in sentence_lower:
-            score += 3
 
-        if "delivery" in question_lower and "delivery" in sentence_lower:
-            score += 2
+def answer_question(question, chunks, vectorizer, matrix):
+    """Generate an answer using retrieved policy context."""
 
-        if "payment" in question_lower and "payment" in sentence_lower:
-            score += 2
-
-        if "fraud" in question_lower and "fraud" in sentence_lower:
-            score += 3
-
-        if "privacy" in question_lower and any(
-            word in sentence_lower
-            for word in ["personal", "address", "phone", "email"]
-        ):
-            score += 2
-
-        if score > 0:
-
-            scored_chunks.append((score, chunk))
-
-    scored_chunks.sort(
-        key=lambda item: item[0],
-        reverse=True
+    retrieved = retrieve(
+        question, chunks, vectorizer, matrix
     )
-
-    return [
-        chunk
-        for score, chunk in scored_chunks[:top_k]
-    ]
-
-
-# --------------------------------------------------
-# 5. POLICY ASSISTANT
-# --------------------------------------------------
-
-def ask_policy_assistant(question, chunks):
-
-    retrieved = retrieve(question, chunks, top_k=3)
 
     if not retrieved:
-
         return (
             "I could not find that information in the policy documents.",
             ""
         )
 
     context = "\n".join(
-        f"[{item['source']}] {item['text']}"
-        for item in retrieved
+        f"{chunk['text']} [{chunk['source']}]"
+        for chunk in retrieved
     )
 
     messages = [
-
         {
             "role": "system",
             "content": (
-                "You are a POLICY ASSISTANT. "
-                "Answer using only the supplied policy context. "
-                "Do not invent information."
+                "You are a POLICY ASSISTANT. Answer questions using "
+                "only the supplied policy context. Do not invent facts."
             )
         },
-
         {
             "role": "user",
             "content": (
-                f"CONTEXT:\n{context}\n"
-                f"QUESTION:\n{question}"
+                f"CONTEXT:\n{context}\n\n"
+                f"QUESTION: {question}"
             )
         }
-
     ]
 
-    try:
-
-        response = mock_llm.chat(messages)
-
-        answer = response.choices[0].message.content
-
-        if not answer:
-
-            answer = (
-                "I could not find that information in the policy documents."
-            )
-
-    except Exception as error:
-
-        print("Policy assistant error:", error)
-
-        answer = (
-            "I could not find that information in the policy documents."
-        )
+    response = chat(messages)
+    answer = response.choices[0].message.content
 
     source = retrieved[0]["source"]
 
     return answer, source
 
 
-# --------------------------------------------------
-# 6. SAMPLE QUESTIONS
-# --------------------------------------------------
+def evaluate(chunks, vectorizer, matrix):
+    """Evaluate the RAG system using policy_eval.csv."""
 
-def run_sample_questions(chunks):
+    if not EVAL_FILE.exists():
+        raise FileNotFoundError(
+            f"Evaluation file not found: {EVAL_FILE}"
+        )
 
-    questions = [
+    with EVAL_FILE.open(
+        "r", encoding="utf-8-sig", newline=""
+    ) as file:
+        reader = csv.DictReader(file)
+        questions = list(reader)
 
-        "What is refund policy?",
+    required_columns = {
+        "question", "expected_doc", "expected_fact"
+    }
 
-        "When can a customer receive a refund?",
+    if not required_columns.issubset(reader.fieldnames or []):
+        raise ValueError(
+            "CSV must contain: question, expected_doc, expected_fact"
+        )
 
-        "What happens if delivery is late?",
+    results = []
 
-        "How are payment issues handled?",
+    answerable_total = 0
+    source_correct_count = 0
+    fact_correct_count = 0
 
-        "How is customer personal information protected?"
+    unanswerable_total = 0
+    abstention_correct_count = 0
 
-    ]
+    for item in questions:
+        question = item["question"].strip()
+        expected_source = item["expected_doc"].strip()
+        expected_fact = item["expected_fact"].strip()
+
+        answer, predicted_source = answer_question(
+            question, chunks, vectorizer, matrix
+        )
+
+        source_correct = (
+            predicted_source == expected_source
+            if expected_source else not predicted_source
+        )
+
+        if expected_fact:
+            answerable_total += 1
+
+            if source_correct:
+                source_correct_count += 1
+
+            fact_correct = (
+                expected_fact.casefold() in answer.casefold()
+            )
+
+            if fact_correct:
+                fact_correct_count += 1
+
+        else:
+            unanswerable_total += 1
+
+            fact_correct = (
+                "could not find" in answer.casefold()
+                or "not found" in answer.casefold()
+                or "unable" in answer.casefold()
+            )
+
+            if fact_correct:
+                abstention_correct_count += 1
+
+        results.append({
+            "question": question,
+            "expected_doc": expected_source,
+            "predicted_source": predicted_source,
+            "expected_fact": expected_fact,
+            "answer": answer,
+            "source_correct": source_correct,
+            "fact_correct": fact_correct
+        })
+
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    with OUTPUT_FILE.open(
+        "w", encoding="utf-8", newline=""
+    ) as file:
+        fieldnames = [
+            "question",
+            "expected_doc",
+            "predicted_source",
+            "expected_fact",
+            "answer",
+            "source_correct",
+            "fact_correct"
+        ]
+
+        writer = csv.DictWriter(
+            file, fieldnames=fieldnames
+        )
+
+        writer.writeheader()
+        writer.writerows(results)
+
+    print("\nPOLICY EVALUATION RESULTS")
+    print("--------------------------------")
+    print(f"Total questions: {len(questions)}")
+    print(f"Answerable questions: {answerable_total}")
+    print(f"Unanswerable questions: {unanswerable_total}")
+
+    if answerable_total:
+        print(
+            "Source accuracy: "
+            f"{source_correct_count / answerable_total * 100:.2f}%"
+        )
+
+        print(
+            "Fact accuracy: "
+            f"{fact_correct_count / answerable_total * 100:.2f}%"
+        )
+
+    if unanswerable_total:
+        print(
+            "Unsupported-question abstention accuracy: "
+            f"{abstention_correct_count / unanswerable_total * 100:.2f}%"
+        )
+
+    print("\nDETAILED RESULTS")
+
+    for result in results:
+        print("\nQuestion:", result["question"])
+        print("Expected fact:", result["expected_fact"])
+        print("Generated answer:", result["answer"])
+        print("Predicted source:", result["predicted_source"])
+        print("Source correct:", result["source_correct"])
+        print("Fact correct:", result["fact_correct"])
+
+    print("\nEvaluation results saved to:")
+    print(OUTPUT_FILE)
+
+
+def main():
+    """Run the complete policy RAG system."""
+
+    print("CUSTOMER SUPPORT POLICY RAG SYSTEM")
+    print("----------------------------------")
+
+    policies = load_policies()
+
+    print(f"Policy documents loaded: {len(policies)}")
+
+    chunks = split_into_chunks(policies)
+
+    print(f"Policy chunks created: {len(chunks)}")
+    print(f"Chunk size: {CHUNK_SIZE} words")
+    print(f"Chunk overlap: {CHUNK_OVERLAP} words")
+
+    vectorizer, matrix = build_index(chunks)
+
+    print("TF-IDF index created successfully.")
 
     print("\nPOLICY ASSISTANT SAMPLE QUESTIONS")
 
-    for question in questions:
+    sample_questions = [
+        "What is refund policy?",
+        "When can a customer receive a refund?",
+        "What happens if delivery is late?",
+        "How are payment issues handled?",
+        "How soon is money returned when a payment fails but is deducted?",
+        "How is customer personal information protected?"
+    ]
 
-        answer, source = ask_policy_assistant(
-            question,
-            chunks
+    for question in sample_questions:
+        answer, source = answer_question(
+            question, chunks, vectorizer, matrix
         )
 
         print("\nQuestion:", question)
         print("Answer:", answer)
         print("Source:", source)
 
+    reset()
 
-# --------------------------------------------------
-# 7. POLICY EVALUATION
-# --------------------------------------------------
-
-def evaluate_policy(chunks):
-
-    if not EVALUATION_FILE.exists():
-
-        print("\nEvaluation file not found:", EVALUATION_FILE)
-        return
-
-    evaluation_df = pd.read_csv(EVALUATION_FILE)
-
-    results = []
-
-    for _, row in evaluation_df.iterrows():
-
-        question = str(row["question"])
-
-        # Read expected document
-
-        expected_doc = (
-            ""
-            if pd.isna(row["expected_doc"])
-            else str(row["expected_doc"]).strip()
-        )
-
-        # Treat NONE, NAN and blank as unsupported
-
-        if expected_doc.upper() in ["NONE", "NAN", ""]:
-            expected_doc = ""
-
-        # Read expected fact
-
-        expected_fact = (
-            ""
-            if pd.isna(row["expected_fact"])
-            else str(row["expected_fact"]).strip()
-        )
-
-        if expected_fact.upper() in ["NONE", "NAN", ""]:
-            expected_fact = ""
-
-        # Ask the policy assistant
-
-        answer, predicted_source = ask_policy_assistant(
-            question,
-            chunks
-        )
-
-        # Evaluate answerable questions
-
-        if expected_doc:
-
-            source_correct = (
-                predicted_source == expected_doc
-            )
-
-            fact_correct = (
-                expected_fact.lower() in answer.lower()
-                if expected_fact
-                else False
-            )
-
-        # Evaluate unsupported questions
-
-        else:
-
-            source_correct = False
-
-            fact_correct = (
-                "could not find" in answer.lower()
-                or "not available" in answer.lower()
-            )
-
-        results.append({
-
-            "question": question,
-
-            "expected_doc": expected_doc,
-
-            "predicted_source": predicted_source,
-
-            "expected_fact": expected_fact,
-
-            "answer": answer,
-
-            "source_correct": source_correct,
-
-            "fact_correct": fact_correct
-
-        })
-
-    results_df = pd.DataFrame(results)
-
-    # Save evaluation results
-
-    results_df.to_csv(
-        RESULT_FILE,
-        index=False
-    )
-
-    # Separate supported and unsupported questions
-
-    answerable = (
-        results_df["expected_doc"].fillna("").str.strip() != ""
-    )
-
-    answerable_count = int(answerable.sum())
-
-    unanswerable_count = int((~answerable).sum())
-
-    # Calculate source and fact accuracy
-
-    if answerable_count > 0:
-
-        source_accuracy = (
-            results_df.loc[answerable, "source_correct"].mean() * 100
-        )
-
-        fact_accuracy = (
-            results_df.loc[answerable, "fact_correct"].mean() * 100
-        )
-
-    else:
-
-        source_accuracy = 0
-        fact_accuracy = 0
-
-    # Calculate unsupported-question abstention accuracy
-
-    if unanswerable_count > 0:
-
-        abstention_accuracy = (
-            results_df.loc[~answerable, "fact_correct"].mean() * 100
-        )
-
-    else:
-
-        abstention_accuracy = 0
-
-    # Display evaluation summary
-
-    print("\nPOLICY EVALUATION RESULTS")
-    print("--------------------------------")
-
-    print("Total questions:", len(results_df))
-
-    print("Answerable questions:", answerable_count)
-
-    print("Unanswerable questions:", unanswerable_count)
-
-    print(f"Source accuracy: {source_accuracy:.2f}%")
-
-    print(f"Fact accuracy: {fact_accuracy:.2f}%")
-
-    print(
-        f"Unsupported-question abstention accuracy: "
-        f"{abstention_accuracy:.2f}%"
-    )
-
-    # Display detailed results
-
-    print("\nDETAILED RESULTS")
-
-    print(
-        results_df[
-            [
-                "question",
-                "predicted_source",
-                "source_correct",
-                "fact_correct"
-            ]
-        ].to_string(index=False)
-    )
-
-    print("\nEvaluation results saved to:")
-
-    print(RESULT_FILE)
-
-
-# --------------------------------------------------
-# 8. MAIN PROGRAM
-# --------------------------------------------------
-
-def main():
-
-    print("CUSTOMER SUPPORT POLICY RAG SYSTEM")
-    print("----------------------------------")
-
-    mock_llm.reset()
-
-    policies = load_policies()
-
-    print("Policy documents loaded:", len(policies))
-
-    chunks = split_sentences(policies)
-
-    print("Policy sentences created:", len(chunks))
-
-    run_sample_questions(chunks)
-
-    evaluate_policy(chunks)
+    evaluate(chunks, vectorizer, matrix)
 
     print("\nPOLICY RAG COMPLETED SUCCESSFULLY!")
 
 
 if __name__ == "__main__":
-
     main()
-
