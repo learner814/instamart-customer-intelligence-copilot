@@ -85,6 +85,10 @@ The implementation includes JSON response validation, a single-category keyword 
 In the reproduced run, 4 empty and 4 long tickets were guarded, all 278 planted PII instances were redacted, and few-shot accuracy was 100% across the 147 tickets that received a valid classification. Accuracy is measured against the generated ticket labels.
 
 ## Part D
+ReAct vs Plan-and-Execute
+- ReAct combines reasoning and actions step by step. The agent observes the result of each tool call before deciding what to do next.
+- Plan-and-Execute creates a complete plan first and then executes the planned steps.
+- This project uses ReAct because refund decisions depend on order details and policy information retrieved during execution. It allows the agent to adjust its next action based on the tool observations.
 
 ### Policy RAG
 
