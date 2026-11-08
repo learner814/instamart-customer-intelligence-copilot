@@ -1,0 +1,50 @@
+{
+  "scenario_id": "S4",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a customer support refund AGENT. Check orders and follow the refund policy."
+    },
+    {
+      "role": "user",
+      "content": "Please refund order ORD-100001, I did not like the delivery."
+    },
+    {
+      "role": "tool",
+      "name": "get_order",
+      "content": "{\"order_id\": \"ORD-100001\", \"status\": \"completed\", \"order_amount\": 109.65, \"delivery_minutes\": 20.0}"
+    },
+    {
+      "role": "tool",
+      "name": "search_policy",
+      "content": "{\"source\": \"refund_policy.txt\", \"policy\": \"Refund Policy. A refund can be requested only for orders whose status is completed. Orders with status cancelled were never charged, so no refund applies to them. If a completed order is delivered in more than 45 minutes, the customer receives a full refund of the order amount. If a completed order is delivered in 45 minutes or less, no late-delivery refund is paid. Refunds up to INR 1000 are approved automatically by the support system. A refund above INR 1000 must be approved by a human support lead before money is returned. Approved refunds are credited to the original payment method within 5 working days. A refund request must be raised within 7 days of the delivery date.\\n\", \"question\": \"Refund policy\"}"
+    },
+    {
+      "role": "tool",
+      "name": "calculate_refund",
+      "content": "{\"refund_inr\": 0, \"refund_amount\": 0, \"reason\": \"Delivery was not more than 45 minutes.\"}"
+    }
+  ],
+  "tool_results": [
+    {
+      "order_id": "ORD-100001",
+      "status": "completed",
+      "order_amount": 109.65,
+      "delivery_minutes": 20.0
+    },
+    {
+      "source": "refund_policy.txt",
+      "policy": "Refund Policy. A refund can be requested only for orders whose status is completed. Orders with status cancelled were never charged, so no refund applies to them. If a completed order is delivered in more than 45 minutes, the customer receives a full refund of the order amount. If a completed order is delivered in 45 minutes or less, no late-delivery refund is paid. Refunds up to INR 1000 are approved automatically by the support system. A refund above INR 1000 must be approved by a human support lead before money is returned. Approved refunds are credited to the original payment method within 5 working days. A refund request must be raised within 7 days of the delivery date.\n",
+      "question": "Refund policy"
+    },
+    {
+      "refund_inr": 0,
+      "refund_amount": 0,
+      "reason": "Delivery was not more than 45 minutes."
+    }
+  ],
+  "tool_steps": 3,
+  "completed": true,
+  "final_text": "DENIED: delivery was within 45 minutes.",
+  "outcome": "DENIED"
+}

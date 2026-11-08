@@ -1,0 +1,2 @@
+{"idempotency_key": "S1-ORD-100048", "scenario_id": "S1", "order_id": "ORD-100048", "refund_inr": 128.25, "refund_amount": 128.25, "status": "issued", "timestamp": "2026-11-07T19:04:07.544327"}
+{"idempotency_key": "S2-ORD-100067", "scenario_id": "S2", "order_id": "ORD-100067", "refund_inr": 135.0, "refund_amount": 135.0, "status": "issued", "timestamp": "2026-11-07T19:04:07.550142"}

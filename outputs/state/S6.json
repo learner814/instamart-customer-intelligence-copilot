@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S6",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a customer support refund AGENT. Check orders and follow the refund policy."
+    },
+    {
+      "role": "user",
+      "content": "Refund for order ORD-999999 please."
+    },
+    {
+      "role": "tool",
+      "name": "get_order",
+      "content": "{\"error\": \"Order not found\", \"order_id\": \"ORD-999999\"}"
+    }
+  ],
+  "tool_results": [
+    {
+      "error": "Order not found",
+      "order_id": "ORD-999999"
+    }
+  ],
+  "tool_steps": 1,
+  "completed": true,
+  "final_text": "NOT_FOUND: no such order.",
+  "outcome": "NOT_FOUND"
+}
